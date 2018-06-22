@@ -18,6 +18,12 @@ const example = async (colonyClient) => {
   const task = await colonyClient.getTask.call({ taskId })
   console.log(task);
 
+  const dueDate = new Date(2019, 1, 1);
+
+  const ms = await colonyClient.setTaskDueDate.startOperation({ taskId, dueDate });
+
+  console.log(ms.missingSignees);
+
   // Do some cleanup
   await ecp.stop();
 }
