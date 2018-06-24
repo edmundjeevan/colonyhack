@@ -61,7 +61,7 @@ const example = async () => {
   const metaColonyClient = await networkClient.getMetaColonyClient();
   console.log('Meta Colony address: ' + metaColonyClient.contract.address);
 
-  return colonyClient;
+  return { colonyClient, metaColonyClient };
 };
 
 module.exports = example;
